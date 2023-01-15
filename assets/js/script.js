@@ -1,10 +1,10 @@
 // Assignment Code
-const generateBtn = document.querySelector("#generate");
+const generateBtn = document.querySelector("#generate"),
 // Character types
-const lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
-const uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const numberChar = "0123456789";
-const specialChar = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+lowercaseChar = "abcdefghijklmnopqrstuvwxyz",
+uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+numberChar = "0123456789",
+specialChar = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
 function generatePassword() {
   // Final generated password
@@ -85,7 +85,7 @@ function generatePassword() {
           // Add a random character from the possible choices to the final password until it is the length the user chose
           for (let i = 0; i < lengthChoice; i++) {
             // Generate a random whole number from 0 to the total number of available characters
-            let random = Math.floor(Math.random() * charsChosen.length); // TODO: should this be the length of charArray instead?
+            let random = Math.floor(Math.random() * charsChosen.length);
             // Add a random character from the array to the final password
             finalPassword += charArray[random];
           }
@@ -107,11 +107,8 @@ function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
 
-  if (!password) {
-    passwordText.value = "";
-  } else {
-    passwordText.value = password;
-  }
+  passwordText.value = password;
+  
 }
 
 // Add event listener to generate button
